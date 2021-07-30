@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="NoiseMeasuringTool" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C7u-vs-Aiw">
+                                <rect key="frame" x="191" y="433" width="32" height="30"/>
+                                <state key="normal" title="start"/>
+                                <connections>
+                                    <action selector="start:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5Bp-HX-Zjg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZKS-rT-UdZ">
+                                <rect key="frame" x="191.5" y="471" width="31" height="30"/>
+                                <state key="normal" title="stop"/>
+                                <connections>
+                                    <action selector="stop:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MJR-QD-O30"/>
+                                </connections>
+                            </button>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="bKA-Sa-smT">
+                                <rect key="frame" x="85" y="316" width="244" height="4"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="244" id="omf-dd-6GG"/>
+                                </constraints>
+                            </progressView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vdo-QR-76I">
+                                <rect key="frame" x="186" y="328" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="C7u-vs-Aiw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="65W-4P-JRJ"/>
+                            <constraint firstItem="ZKS-rT-UdZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="RxH-rV-qUp"/>
+                            <constraint firstItem="bKA-Sa-smT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="eqz-zH-wUe"/>
+                            <constraint firstItem="vdo-QR-76I" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="oR1-Nx-gwY"/>
+                            <constraint firstItem="ZKS-rT-UdZ" firstAttribute="top" secondItem="C7u-vs-Aiw" secondAttribute="bottom" constant="8" symbolic="YES" id="qgc-qK-4ie"/>
+                            <constraint firstItem="C7u-vs-Aiw" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="t2S-Vj-bU6"/>
+                            <constraint firstItem="C7u-vs-Aiw" firstAttribute="top" secondItem="vdo-QR-76I" secondAttribute="bottom" constant="84" id="tde-Sg-VTf"/>
+                            <constraint firstItem="vdo-QR-76I" firstAttribute="top" secondItem="bKA-Sa-smT" secondAttribute="bottom" constant="8" id="u6J-5Y-8Oo"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="dbLabel" destination="vdo-QR-76I" id="7Mw-ky-c5a"/>
+                        <outlet property="progress" destination="bKA-Sa-smT" id="rkw-bU-LZn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="79.6875"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
