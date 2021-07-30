@@ -12,7 +12,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var progress: UIProgressView!
     @IBOutlet weak var dbLabel: UILabel!
     
-    let dbTool:NoiseMeasuringTool = NoiseMeasuringTool()
+    let dbTool:NoiseMeasuringTool = NoiseMeasuringTool.init()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,15 +20,11 @@ class ViewController: UIViewController {
     }
 
     @IBAction func start(_ sender: UIButton) {
-        if !dbTool.isMeasuring() {
-            dbTool.startMeasuring()
-        }
+        dbTool.startMeasuring()
     }
     
     @IBAction func stop(_ sender: UIButton) {
-        if dbTool.isMeasuring() {
-            dbTool.stopMeasuring()
-        }
+        dbTool.stopMeasuring()
     }
 
 }
@@ -37,7 +33,6 @@ extension ViewController:NoiseMeasuringToolDelegate{
     
     func audioPowerChanged(tool:NoiseMeasuringTool, db:Float){
         self.dbLabel.text = "\(Int(db)) dB"
-        
         self.progress.progress = tool.powerPercentage
     }
 }

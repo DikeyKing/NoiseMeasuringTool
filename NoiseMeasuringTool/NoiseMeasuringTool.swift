@@ -98,6 +98,7 @@ class NoiseMeasuringTool:NSObject{
                 audioRecorder.delegate = self
                 audioRecorder.isMeteringEnabled = true
                 audioRecorder.prepareToRecord()
+                
                 return audioRecorder
             } catch {
                 print(error)
@@ -158,6 +159,9 @@ class NoiseMeasuringTool:NSObject{
     // MARK: Method for measure
     
     func startMeasuring() {
+        if measuring == true {
+            return
+        }
         measuring = true
         self.audioRecord?.record()
         
@@ -171,13 +175,16 @@ class NoiseMeasuringTool:NSObject{
     }
     
     func stopMeasuring() {
+        if measuring == false {
+            return
+        }
         measuring = false
         self.audioRecord?.stop()
         self.timer?.fireDate = NSDate.distantFuture
         self.timer?.invalidate()
         self.timer = nil
     }
-        
+
 }
 
 extension NoiseMeasuringTool: AVAudioRecorderDelegate{
